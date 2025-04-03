@@ -1,0 +1,121 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="/img/hm.png" alt="HipMed Logo" />
+      <p>Healthcare solutions for underserved areas</p>
+    </div>
+    <div class="footer-links">
+      <div class="link-group">
+        <h3>Site Map</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#mission">Mission</a></li>
+          <li><a href="/#roadmap">Roadmap</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="link-group">
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="mailto:info@hipmed.co">Email Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>&copy; {currentYear} HipMed. All rights reserved.</p>
+    <p>Website: <a href="https://hipmed.co">hipmed.co</a></p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 3rem 1rem 1rem;
+    margin-top: 4rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .footer-logo img {
+    height: 60px;
+    width: auto;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo p {
+    color: var(--text-light);
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+
+  .link-group h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-dark);
+  }
+
+  .link-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .link-group li {
+    margin-bottom: 0.5rem;
+  }
+
+  .link-group a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .link-group a:hover {
+    color: var(--accent);
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+
+  .copyright a {
+    color: var(--accent-dark);
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+    }
+  }
+</style>

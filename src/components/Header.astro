@@ -1,0 +1,88 @@
+---
+---
+
+<header>
+  <div class="logo-container">
+    <a href="/">
+      <img src="/img/hm-word.png" alt="HipMed Logo" class="logo" />
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#mission">Mission</a></li>
+      <li><a href="/#roadmap">Roadmap</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/#contact" class="contact-btn">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo-container {
+    flex-shrink: 0;
+  }
+
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    color: var(--text);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  nav a:hover {
+    color: var(--accent);
+  }
+
+  .contact-btn {
+    background-color: var(--accent);
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .contact-btn:hover {
+    background-color: var(--accent-dark);
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    nav ul {
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+</style>

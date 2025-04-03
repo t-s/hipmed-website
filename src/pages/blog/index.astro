@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const blogPosts = [
+  {
+    title: 'Launching HipMed: Our Journey Begins',
+    slug: 'launching-hipmed',
+    date: 'April 2, 2023',
+    excerpt: 'The story of how HipMed was founded and our vision for the future of healthcare in underserved areas.',
+  },
+  {
+    title: 'Challenges in Rural Healthcare: A Global Perspective',
+    slug: 'challenges-in-rural-healthcare',
+    date: 'April 10, 2023',
+    excerpt: 'Exploring the common challenges faced by healthcare providers in rural areas worldwide and how technology can help.',
+  },
+  {
+    title: 'Telemedicine: Bridging the Healthcare Gap',
+    slug: 'telemedicine-bridging-gap',
+    date: 'April 18, 2023',
+    excerpt: 'How telemedicine technology is transforming healthcare delivery in regions with limited access to medical facilities.',
+  },
+];
+---
+
+<Layout title="HipMed Blog | Healthcare Solutions for Underserved Areas" description="Read the latest news, insights, and updates from HipMed on our mission to improve healthcare in underserved areas.">
+  <section class="blog-header section">
+    <h1>HipMed Blog</h1>
+    <p>Insights, updates, and stories about healthcare innovation in underserved areas</p>
+  </section>
+
+  <section class="blog-posts section">
+    {blogPosts.map((post) => (
+      <article class="blog-card card">
+        <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+        <div class="post-meta">
+          <span class="post-date">{post.date}</span>
+        </div>
+        <p class="post-excerpt">{post.excerpt}</p>
+        <a href={`/blog/${post.slug}`} class="read-more">Read More →</a>
+      </article>
+    ))}
+  </section>
+</Layout>
+
+<style>
+  .blog-header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+
+  .blog-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .blog-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .blog-card h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+
+  .blog-card h2 a {
+    color: var(--accent-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .blog-card h2 a:hover {
+    color: var(--accent);
+  }
+
+  .post-meta {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+
+  .post-excerpt {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .read-more {
+    display: inline-block;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+  }
+
+  .read-more:hover {
+    transform: translateX(5px);
+    text-decoration: none;
+  }
+</style>
