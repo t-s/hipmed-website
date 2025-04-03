@@ -29,6 +29,37 @@ import Footer from '../components/Footer.astro';
     </main>
     <Footer />
   </div>
+  
+  <!-- Toast notification -->
+  <div id="toast-notification" class="toast-notification">
+    <div class="toast-content">
+      <div class="toast-icon">✓</div>
+      <div class="toast-message">Message sent successfully!</div>
+    </div>
+  </div>
+
+  <script>
+    // Function to show toast notification
+    function showToast() {
+      const toast = document.getElementById('toast-notification');
+      toast.classList.add('show');
+      
+      // Hide toast after 5 seconds
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 5000);
+    }
+
+    // Check if the URL has the success parameter
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('success') === 'true') {
+        showToast();
+        // Clean up the URL
+        history.replaceState(null, null, window.location.pathname);
+      }
+    });
+  </script>
 
   <style is:global>
     :root {
@@ -38,6 +69,49 @@ import Footer from '../components/Footer.astro';
       --background: #f0f9ff;
       --text: #1e293b;
       --text-light: #475569;
+      --success: #10b981; /* Green for success messages */
+    }
+    
+    /* Toast notification styles */
+    .toast-notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      transform: translateY(150%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    
+    .toast-notification.show {
+      transform: translateY(0);
+    }
+    
+    .toast-content {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      color: var(--text);
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      min-width: 250px;
+    }
+    
+    .toast-icon {
+      background-color: var(--success);
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      font-weight: bold;
+    }
+    
+    .toast-message {
+      font-weight: 500;
     }
     
     html {

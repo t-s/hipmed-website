@@ -93,7 +93,8 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
-      <input type="hidden" name="_next" value="https://hipmed.co/thank-you" />
+      <!-- Return to the current page with a success parameter -->
+      <input type="hidden" name="_next" value="https://hipmed.co/?success=true#contact" />
       <input type="hidden" name="_template" value="table" />
       <button type="submit" class="button">Send Message</button>
     </form>
