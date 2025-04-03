@@ -63,8 +63,30 @@ import Footer from '../components/Footer.astro';
       height: 100%;
       z-index: -1;
       background-color: var(--background);
-      opacity: 0.6;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='p' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath fill='%2360a5fa' fill-opacity='0.1' d='M0 0L100 0L50 100L0 0z'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='%23f0f9ff'/%3E%3Crect width='100%25' height='100%25' fill='url(%23p)'/%3E%3C/svg%3E");
+      opacity: 0.8;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900' viewBox='0 0 900 900'%3E%3Cg fill='%2360a5fa' fill-opacity='0.1'%3E%3Cpolygon points='215,76 454,213 156,287'/%3E%3Cpolygon points='542,154 324,76 456,327'/%3E%3Cpolygon points='756,145 645,254 876,278'/%3E%3Cpolygon points='145,423 54,267 297,287'/%3E%3Cpolygon points='467,432 324,376 423,287'/%3E%3Cpolygon points='654,134 767,312 557,432'/%3E%3Cpolygon points='233,478 124,677 312,654'/%3E%3Cpolygon points='432,654 342,798 521,812'/%3E%3Cpolygon points='654,845 734,712 845,712'/%3E%3Cpolygon points='768,534 821,678 654,654'/%3E%3Cpolygon points='845,345 815,456 743,356'/%3E%3Cpolygon points='156,765 213,843 54,845'/%3E%3Cpolygon points='467,23 542,187 456,76'/%3E%3Cpolygon points='845,123 754,65 743,167'/%3E%3Cpolygon points='65,543 145,654 23,645'/%3E%3Cpolygon points='43,134 187,54 123,213'/%3E%3Cpolygon points='367,542 289,654 456,543'/%3E%3Cpolygon points='623,543 715,654 832,543'/%3E%3Cpolygon points='321,765 289,845 387,843'/%3E%3Cpolygon points='854,765 765,843 687,732'/%3E%3Cpolygon points='534,356 423,432 534,543'/%3E%3Cpolygon points='523,76 634,134 587,287'/%3E%3Cpolygon points='267,145 132,254 234,321'/%3E%3Cpolygon points='132,678 267,546 245,743'/%3E%3Cpolygon points='321,456 387,323 453,432'/%3E%3Cpolygon points='734,498 645,587 734,627'/%3E%3Cpolygon points='567,623 645,734 458,743'/%3E%3Cpolygon points='543,243 634,345 465,345'/%3E%3Cpolygon points='321,243 187,345 256,423'/%3E%3Cpolygon points='367,765 432,843 534,732'/%3E%3Cpolygon points='97,432 187,534 54,523'/%3E%3Cpolygon points='67,345 132,428 156,356'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 900px 900px;
+      background-position: center center;
+      animation: shift-background 50s ease-in-out infinite alternate;
+    }
+    
+    @keyframes shift-background {
+      0% {
+        background-position: 0% 0%;
+      }
+      25% {
+        background-position: 100% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      75% {
+        background-position: 0% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
     }
 
     .content {
