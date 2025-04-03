@@ -166,11 +166,16 @@
   .timeline::before {
     content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 20px;
+    top: 16px; /* Start from the middle of the first dot */
+    height: calc(100% - 16px - 60px); /* Extended by a few pixels */
+    left: 22px; /* Moved 2px to the right */
     width: 2px;
     background-color: var(--accent);
+  }
+  
+  /* Add a specific style for the last timeline item */
+  .timeline-item:last-child {
+    margin-bottom: 0;
   }
 
   .timeline-item {
@@ -181,7 +186,7 @@
 
   .timeline-marker {
     position: absolute;
-    left: 10px;
+    left: 12px; /* Moved 2px to the right */
     top: 6px;
     width: 20px;
     height: 20px;
@@ -237,11 +242,11 @@
     }
 
     .timeline::before {
-      left: 15px;
+      left: 17px; /* Moved 2px to the right */
     }
 
     .timeline-marker {
-      left: 5px;
+      left: 7px; /* Moved 2px to the right */
       width: 16px;
       height: 16px;
     }
