@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="/img/hm.png" alt="Hipmed Logo" />
+      <img src="/img/hm-transparent.png" alt="Hipmed Logo" />
     </div>
   </div>
 </section>
@@ -74,7 +74,9 @@
     <h2>Contact Us</h2>
     <p>We'd love to hear from you! Whether you're interested in our solutions, want to partner with us, or simply have questions about our work, please don't hesitate to reach out.</p>
     
-    <form class="contact-form">
+    <form class="contact-form" action="https://formsubmit.co/hello@hipmed.co" method="POST">
+      <input type="hidden" name="_subject" value="New contact from Hipmed website" />
+      <input type="hidden" name="_captcha" value="false" />
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required />
@@ -91,6 +93,8 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
+      <input type="hidden" name="_next" value="https://hipmed.co/thank-you" />
+      <input type="hidden" name="_template" value="table" />
       <button type="submit" class="button">Send Message</button>
     </form>
   </div>
