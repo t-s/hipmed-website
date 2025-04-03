@@ -74,9 +74,13 @@
     <h2>Contact Us</h2>
     <p>We'd love to hear from you! Whether you're interested in our solutions, want to partner with us, or simply have questions about our work, please don't hesitate to reach out.</p>
     
-    <form class="contact-form" action="https://formsubmit.co/hello@hipmed.co" method="POST">
-      <input type="hidden" name="_subject" value="New contact from Hipmed website" />
-      <input type="hidden" name="_captcha" value="false" />
+    <!-- 
+    IMPORTANT: Website contact form
+    -->
+    <form action="https://getform.io/f/amdkwyrb" method="POST" class="contact-form" id="contact-form">
+      <input type="hidden" name="_redirect" value="false">
+      <input type="hidden" name="_subject" value="New Contact from HipMed Website">
+      
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required />
@@ -93,11 +97,83 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
-      <!-- Return to the current page with a success parameter -->
-      <input type="hidden" name="_next" value="https://hipmed.co/?success=true#contact" />
-      <input type="hidden" name="_template" value="table" />
-      <button type="submit" class="button">Send Message</button>
+      <div class="form-submit-area">
+        <button type="submit" class="button" id="submit-btn">Send Message</button>
+        <div class="or-email-directly">
+          or email us directly at <a href="mailto:hello@hipmed.co">hello@hipmed.co</a>
+        </div>
+      </div>
     </form>
+    
+    <script>
+      // Handle form submission with fetch to display toast notification
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        if (form) {
+          form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.textContent = "Sending...";
+            }
+            
+            try {
+              const formData = new FormData(form);
+              
+              // Submit the form data
+              const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                  'Accept': 'application/json',
+                }
+              });
+              
+              if (response.ok) {
+                // Reset the form
+                form.reset();
+                
+                // Show the toast notification
+                const toast = document.getElementById('toast-notification');
+                if (toast) {
+                  toast.classList.add('show');
+                  setTimeout(() => {
+                    toast.classList.remove('show');
+                  }, 5000);
+                }
+              } else {
+                alert('There was a problem sending your message. Please try again or email us directly.');
+              }
+            } catch (error) {
+              console.error('Error:', error);
+              alert('There was a problem sending your message. Please try again or email us directly.');
+            } finally {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Send Message";
+              }
+            }
+          });
+        }
+      });
+    </script>
+    
+    <style>
+      .form-submit-area {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      
+      .or-email-directly {
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+    </style>
   </div>
 </section>
 
