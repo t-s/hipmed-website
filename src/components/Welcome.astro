@@ -5,7 +5,7 @@
   <div class="hero-content">
     <div class="hero-text">
       <h1>Healthcare Innovation for Underserved Areas</h1>
-      <p>Hipmed provides software solutions that bridge the medical infrastructure gap in rural and underserved areas.</p>
+      <p>Hipmed provides HIPAA and GDPR-compliant software solutions that bridge the medical infrastructure gap in rural and underserved areas.</p>
       <div class="hero-buttons">
         <a href="/#mission" class="button primary">Our Mission</a>
         <a href="/#contact" class="button secondary">Get in Touch</a>
@@ -83,15 +83,15 @@
       </div>
     </div>
 
-    <p>We believe everyone deserves access to quality healthcare, regardless of their geographic location or economic status. Our mission is to create software tools that:</p>
+    <p>We believe everyone deserves access to quality healthcare, regardless of their geographic location or economic status. Our mission is to create software tools that meet the highest standards of data protection (HIPAA and GDPR-compliant) that:</p>
     <ul>
-      <li>Connect patients with healthcare providers through telemedicine</li>
+      <li>Connect patients with healthcare providers through secure telemedicine</li>
       <li>Enable remote diagnosis and monitoring for chronic conditions</li>
       <li>Provide decision support systems for healthcare workers with limited resources</li>
-      <li>Facilitate medical record keeping in low-connectivity environments</li>
+      <li>Facilitate private, HIPAA and GDPR-compliant medical record keeping in low-connectivity environments</li>
       <li>Support community health education and preventive care initiatives</li>
     </ul>
-    <p>By leveraging technology to overcome geographical and infrastructure barriers, we aim to improve health outcomes and quality of life for millions of people worldwide.</p>
+    <p>By leveraging technology to overcome geographical and infrastructure barriers while maintaining strict compliance with global healthcare privacy and data protection standards (including HIPAA and GDPR), we aim to improve health outcomes and quality of life for millions of people worldwide.</p>
   </div>
 </section>
 
@@ -103,7 +103,7 @@
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <h3>Phase 1: Research & Development</h3>
-          <p>Conducting needs assessments in target communities, identifying key healthcare gaps, and developing prototype solutions tailored to specific regional challenges.</p>
+          <p>Conducting needs assessments in target communities, identifying key healthcare gaps, and developing prototype solutions tailored to specific regional challenges with HIPAA and GDPR compliance built in from the ground up.</p>
         </div>
       </div>
       <div class="timeline-item">
@@ -159,10 +159,18 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
+      <div class="form-group consent-checkbox">
+        <input type="checkbox" id="consent" name="consent" required />
+        <label for="consent">I consent to Hipmed collecting my data via this form. See our <a href="/privacy-policy" class="privacy-link">Privacy Policy</a> for details on how we protect your information. You may request deletion of your data at any time.</label>
+      </div>
+      
       <div class="form-submit-area">
         <button type="submit" class="button" id="submit-btn">Send Message</button>
         <div class="or-email-directly">
           or email us directly at <a href="mailto:hello@hipmed.co">hello@hipmed.co</a>
+        </div>
+        <div class="gdpr-notice">
+          Your data is processed in accordance with our Privacy Policy and in compliance with GDPR regulations.
         </div>
       </div>
     </form>
@@ -463,6 +471,36 @@
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--accent-light);
+  }
+  
+  .consent-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .consent-checkbox input {
+    margin-top: 0.25rem;
+    width: auto;
+  }
+  
+  .consent-checkbox label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.4;
+  }
+  
+  .gdpr-notice {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+  
+  .privacy-link {
+    color: var(--accent-dark);
+    text-decoration: underline;
   }
 
   @media (max-width: 768px) {
