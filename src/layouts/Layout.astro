@@ -18,7 +18,7 @@ import Footer from '../components/Footer.astro';
   <link rel="icon" type="image/png" href="/img/hm-transparent.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <meta name="generator" content={Astro.generator} />
   <meta name="description" content={description} />
   <title>{title}</title>
@@ -75,6 +75,7 @@ import Footer from '../components/Footer.astro';
       --success: #10b981; /* Green for success messages */
       --font-heading: 'DM Serif Display', serif;
       --font-subtitle: 'Tinos', serif;
+      --font-body: 'Open Sans', sans-serif;
     }
     
     /* Toast notification styles */
@@ -120,10 +121,11 @@ import Footer from '../components/Footer.astro';
     }
     
     html {
-      font-family: system-ui, sans-serif;
+      font-family: var(--font-body), system-ui, sans-serif;
       background: var(--background);
       color: var(--text);
       scroll-behavior: smooth;
+      font-weight: 400;
     }
     
     body {
@@ -184,6 +186,15 @@ import Footer from '../components/Footer.astro';
       font-weight: 400;
       letter-spacing: -0.01em;
     }
+    
+    h2, h3, h4, h5, h6 {
+      font-family: var(--font-body);
+      font-weight: 600;
+    }
+    
+    p, ul, ol, li, a, button, input, textarea {
+      font-family: var(--font-body);
+    }
 
     a {
       color: var(--accent-dark);
@@ -202,13 +213,17 @@ import Footer from '../components/Footer.astro';
       border: none;
       padding: 0.5rem 1.5rem;
       border-radius: 4px;
+      font-family: var(--font-body);
       font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
       cursor: pointer;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
     button:hover, .button:hover {
       background-color: var(--accent-dark);
+      transform: translateY(-1px);
     }
 
     .section {
@@ -221,6 +236,15 @@ import Footer from '../components/Footer.astro';
       padding: 1.5rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       margin-bottom: 1.5rem;
+    }
+    
+    .card p {
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    
+    .card ul, .card ol {
+      line-height: 1.6;
     }
 
     main {
