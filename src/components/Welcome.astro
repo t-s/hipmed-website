@@ -33,8 +33,11 @@
           <div class="pipeline-label">Patient in Rural Area</div>
         </div>
         <div class="pipeline-arrow" id="arrow1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" width="24" height="24">
+          <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" width="24" height="24">
             <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
+          </svg>
+          <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" width="24" height="24">
+            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/>
           </svg>
         </div>
         <div class="pipeline-item" id="data">
@@ -46,8 +49,11 @@
           <div class="pipeline-label">Field Data Collection</div>
         </div>
         <div class="pipeline-arrow" id="arrow2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" width="24" height="24">
+          <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" width="24" height="24">
             <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
+          </svg>
+          <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" width="24" height="24">
+            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/>
           </svg>
         </div>
         <div class="pipeline-item" id="care">
@@ -59,8 +65,11 @@
           <div class="pipeline-label">Localized Care</div>
         </div>
         <div class="pipeline-arrow" id="arrow3">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" width="24" height="24">
+          <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" width="24" height="24">
             <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
+          </svg>
+          <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" width="24" height="24">
+            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/>
           </svg>
         </div>
         <div class="pipeline-item" id="health">
@@ -253,12 +262,13 @@
   }
 
   .hero-text p {
-    font-family: var(--font-subtitle);
+    font-family: var(--font-body);
     font-size: 1.3rem;
     color: var(--text-light);
     margin-bottom: 2rem;
     line-height: 1.4;
     max-width: 40rem;
+    font-weight: 400;
   }
 
   .hero-buttons {
@@ -344,10 +354,23 @@
 
   .pipeline-arrow {
     color: var(--accent);
-    opacity: 0;
-    transform: scale(0.5);
     display: flex;
     align-items: center;
+    justify-content: center;
+  }
+  
+  .pipeline-arrow svg {
+    opacity: 0;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .arrow-down {
+    display: none;
+  }
+  
+  .arrow-right {
+    display: block;
   }
 
   /* Timeline styles */
@@ -464,8 +487,15 @@
     }
 
     .pipeline-arrow {
-      transform: rotate(90deg) scale(0.5);
       margin: 0.5rem 0;
+    }
+    
+    .arrow-right {
+      display: none;
+    }
+    
+    .arrow-down {
+      display: block;
     }
   }
 </style>
@@ -515,7 +545,7 @@
       
       // First arrow appears
       .add({
-        targets: '#arrow1',
+        targets: '#arrow1 svg',
         opacity: [0, 1],
         scale: [0.5, 1],
         duration: 400
@@ -531,7 +561,7 @@
       
       // Second arrow appears
       .add({
-        targets: '#arrow2',
+        targets: '#arrow2 svg',
         opacity: [0, 1],
         scale: [0.5, 1],
         duration: 400
@@ -547,7 +577,7 @@
       
       // Third arrow appears
       .add({
-        targets: '#arrow3',
+        targets: '#arrow3 svg',
         opacity: [0, 1],
         scale: [0.5, 1],
         duration: 400
@@ -563,13 +593,13 @@
       
       // Pause at the end to show the full pipeline
       .add({
-        targets: '.pipeline-item, .pipeline-arrow',
+        targets: '.pipeline-item, .pipeline-arrow svg',
         duration: 4000 // 4 second pause
       })
       
       // Reset all elements
       .add({
-        targets: '.pipeline-item, .pipeline-arrow',
+        targets: '.pipeline-item, .pipeline-arrow svg',
         opacity: 0,
         duration: 1000,
         easing: 'easeInExpo'
