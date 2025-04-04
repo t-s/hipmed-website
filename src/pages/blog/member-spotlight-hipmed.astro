@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const publishDate = 'May 4, 2016';
+const author = 'Martin De Leon';
+---
+
+<Layout title="1776 Member Spotlight: Hipmed on Global Healthcare Access | Hipmed Blog" description="Learn how Hipmed is using technology to bring healthcare to underserved communities around the world.">
+  <div class="blog-post">
+    <a href="/blog" class="back-link">← Back to Blog</a>
+    
+    <article>
+      <header>
+        <h1>Member Spotlight: Hipmed on Global Healthcare Access</h1>
+        <div class="post-meta">
+          <span class="post-date">By: {author}</span>
+        </div>
+      </header>
+
+      <div class="post-content">
+        <h2>How One Startup is Using Technology to Bring Healthcare to Everyone</h2>
+        
+        <p>With rapid advances in technology and widespread access to smartphones, you'd think healthcare would be universally accessible. But in many communities—especially in developing regions—access to basic health services remains a major challenge.</p>
+        
+        <p>Enter Hipmed, a member of 1776, working to change that. By reimagining how patients and doctors communicate, Hipmed is leveraging technology to expand global access to healthcare.</p>
+        
+        <p>We sat down with Tim Sidie, founder of Hipmed, to learn more about the company's mission, its approach to innovation, and the future of tech in healthcare.</p>
+        
+        <h3>Q: How did you become interested in technology and the health industry?</h3>
+        <p><strong>Tim:</strong> Technology has always felt more like a pastime than a job—I'm lucky to work in a field I genuinely enjoy. I started as a NASA engineer and eventually transitioned into startups. This is my second venture into entrepreneurship, but my first in the healthcare space. I'm driven by the possibility of making a significant impact, and improving global healthcare access is the most meaningful outcome I can imagine.</p>
+        
+        <h3>Q: What's the story behind Hipmed? What problem are you solving?</h3>
+        <p><strong>Tim:</strong> Hipmed started with a stark realization: soon, more people will own a smartphone than have access to nearby healthcare. While phone technology and distribution have grown exponentially, healthcare infrastructure hasn't kept up—especially globally.</p>
+        
+        <p>We saw an opportunity to ride the wave of smartphone adoption to deliver much-needed medical access. That's the big problem we're aiming to solve.</p>
+        
+        <h3>Q: What makes Hipmed different from other health startups?</h3>
+        <p><strong>Tim:</strong> Many startups focus on high-end solutions that aren't practical for underserved communities. We're tackling that head-on by creating a bridge between first-response diagnostics and long-term care, using a tool that's already in people's pockets—smartphones.</p>
+        
+        <p>With powerful sensors and computing capabilities, smartphones can function like mini medical clinics, bringing diagnostic tools to places where infrastructure is lacking.</p>
+        
+        <h3>Q: How are you getting doctors and patients on board?</h3>
+        <p><strong>Tim:</strong> Getting the product into the hands of healthcare practitioners has been a challenge—time is precious. But there's no substitute for real-world results.</p>
+        
+        <p>We're focusing on volunteer practitioners in disadvantaged areas, and during our trial phase, encouraging them to use our platform alongside traditional equipment. As trust builds and we prove the platform's accuracy, we'll let frontline workers decide what tools to use going forward.</p>
+        
+        <h3>Q: What are the biggest challenges of innovating in the healthcare industry?</h3>
+        <p><strong>Tim:</strong> Regulation, without a doubt. It's essential for safety and accountability, but it often slows innovation. It becomes a balancing act between breaking new ground and meeting necessary standards. That said, we welcome the dialogue and understand it's part of the path to building a trusted product.</p>
+        
+        <h3>Q: What early market opportunities did Hipmed pursue—and how did you overcome barriers?</h3>
+        <p><strong>Tim:</strong> Honestly, very few opportunities presented themselves early on. Healthcare is complex, with many stakeholders—insurers, institutions, practitioners, and patients—each needing a compelling reason to adopt new tech.</p>
+        
+        <p>We focused on underserved areas, where the value proposition is clear: enabling a complete healthcare experience where there otherwise wouldn't be one.</p>
+        
+        <h3>Q: What caregiving problems do patients face, and how can startups help solve them?</h3>
+        <p><strong>Tim:</strong> The biggest issues are availability, convenience, and delays in diagnosis.</p>
+        
+        <p>In rural or disaster-stricken regions, patients often go without care due to distance or lack of infrastructure. Startups can solve this by bringing care directly to the patient.</p>
+        
+        <p>Telemedicine helps, but it often lacks ground truth data that informs accurate diagnoses. Combine that data with remote consultations, and suddenly, clinic visits become less essential.</p>
+        
+        <h3>Q: What trends are emerging in health tech startups?</h3>
+        <p><strong>Tim:</strong> There are two big trends:</p>
+        
+        <ol>
+          <li>Innovative medical technology</li>
+          <li>New models for affordable healthcare, especially those tied to health insurance and the Affordable Care Act</li>
+        </ol>
+        
+        <p>Both are exciting. We chose to focus on medical technology because of its potential for global impact. But I admire the work being done in health insurance innovation as well—it's all part of the bigger picture.</p>
+        
+        <h3>Q: What's next for Hipmed?</h3>
+        <p><strong>Tim:</strong> We're preparing a pilot program with an incubator in Africa to gather field feedback and begin building our international reputation.</p>
+        
+        <p>As we refine the platform, we aim to approach NGOs and international health organizations to broaden our impact and deliver Hipmed where it's needed most.</p>
+        
+        <h3>Q: Any advice for other rising health startups?</h3>
+        <p><strong>Tim:</strong> Be bold.</p>
+        
+        <p>There's tremendous momentum in the health sector right now, and a strong idea can get support—even in the face of regulatory hurdles. Just know that you'll need to invest serious time if you want to break into this space. But if you're passionate and persistent, the opportunity to make real change is there.</p>
+        
+        <div class="author-bio">
+          <h3>About the Author:</h3>
+          <p>Martin De Leon is a senior at Georgetown University majoring in Culture and Politics. As an editorial and marketing intern at 1776, he contributes to content development and storytelling for the startup community.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--accent);
+  }
+
+  article header {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .post-meta {
+    color: var(--text-light);
+    font-size: 1rem;
+  }
+
+  .post-content {
+    line-height: 1.7;
+  }
+
+  .post-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .post-content h2 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+  }
+  
+  .post-content h3 {
+    font-size: 1.4rem;
+    margin: 1.8rem 0 0.8rem;
+    color: var(--accent-dark);
+  }
+
+  .post-content ul, .post-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .post-content li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .author-bio {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .author-bio h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  
+  .author-bio p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+  }
+</style>
