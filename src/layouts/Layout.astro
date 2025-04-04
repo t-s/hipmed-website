@@ -16,6 +16,9 @@ import Footer from '../components/Footer.astro';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/png" href="/img/hm-transparent.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <meta name="generator" content={Astro.generator} />
   <meta name="description" content={description} />
   <title>{title}</title>
@@ -70,6 +73,8 @@ import Footer from '../components/Footer.astro';
       --text: #1e293b;
       --text-light: #475569;
       --success: #10b981; /* Green for success messages */
+      --font-heading: 'DM Serif Display', serif;
+      --font-subtitle: 'Tinos', serif;
     }
     
     /* Toast notification styles */
@@ -172,6 +177,12 @@ import Footer from '../components/Footer.astro';
     h1, h2, h3, h4, h5, h6 {
       color: var(--accent-dark);
       line-height: 1.2;
+    }
+    
+    h1 {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      letter-spacing: -0.01em;
     }
 
     a {
