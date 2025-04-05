@@ -167,36 +167,43 @@
     width: 320px;
     transform-origin: left center;
     transform: rotate(27deg);
+    /* Add visible track for particles */
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.5));
   }
   
   .patient-2 .line {
     width: 320px;
     transform-origin: left center;
     transform: rotate(153deg);
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.5));
   }
   
   .patient-3 .line {
     width: 320px;
     transform-origin: left center;
     transform: rotate(0deg);
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.5));
   }
   
   .patient-4 .line {
     width: 320px;
     transform-origin: left center;
     transform: rotate(180deg);
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.5));
   }
   
   .patient-5 .line {
     width: 320px;
     transform-origin: left center;
     transform: rotate(-27deg);
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.5));
   }
   
   .patient-6 .line {
     width: 320px;
     transform-origin: left center;
     transform: rotate(-153deg);
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.5));
   }
   
   /* Patient animations */
@@ -245,6 +252,12 @@
     box-shadow: 0 0 15px #3b82f6;
     z-index: 20;
     opacity: 0;
+    /* Position at the center of the icon */
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    margin-top: -6px;
+    margin-left: -6px;
   }
   
   /* Animation for data particles */
@@ -287,11 +300,11 @@
       opacity: 1;
     }
     80% {
-      transform: translate(300px, 150px); 
+      transform: translate(285px, 145px); 
       opacity: 1;
     }
     98% {
-      transform: translate(300px, 150px); 
+      transform: translate(285px, 145px); 
       opacity: 0;
     }
   }
@@ -305,11 +318,11 @@
       opacity: 1;
     }
     80% {
-      transform: translate(-300px, 150px); 
+      transform: translate(-285px, 145px); 
       opacity: 1;
     }
     98% {
-      transform: translate(-300px, 150px); 
+      transform: translate(-285px, 145px); 
       opacity: 0;
     }
   }
@@ -323,11 +336,11 @@
       opacity: 1;
     }
     80% {
-      transform: translate(300px, 0); 
+      transform: translate(305px, 0); 
       opacity: 1;
     }
     98% {
-      transform: translate(300px, 0); 
+      transform: translate(305px, 0); 
       opacity: 0;
     }
   }
@@ -341,11 +354,11 @@
       opacity: 1;
     }
     80% {
-      transform: translate(-300px, 0); 
+      transform: translate(-305px, 0); 
       opacity: 1;
     }
     98% {
-      transform: translate(-300px, 0); 
+      transform: translate(-305px, 0); 
       opacity: 0;
     }
   }
@@ -359,11 +372,11 @@
       opacity: 1;
     }
     80% {
-      transform: translate(300px, -150px); 
+      transform: translate(285px, -145px); 
       opacity: 1;
     }
     98% {
-      transform: translate(300px, -150px); 
+      transform: translate(285px, -145px); 
       opacity: 0;
     }
   }
@@ -377,11 +390,11 @@
       opacity: 1;
     }
     80% {
-      transform: translate(-300px, -150px); 
+      transform: translate(-285px, -145px); 
       opacity: 1;
     }
     98% {
-      transform: translate(-300px, -150px); 
+      transform: translate(-285px, -145px); 
       opacity: 0;
     }
   }
@@ -424,16 +437,69 @@
       height: 400px;
     }
     
-    .patient-1 .line,
-    .patient-2 .line,
-    .patient-3 .line,
-    .patient-4 .line,
-    .patient-5 .line,
-    .patient-6 .line {
-      width: 200px;
+    /* Calculate line lengths using percentages of container */
+    .patient-1 .line {
+      width: 35vw;
+      max-width: 200px;
     }
     
-    /* Adjust particle animations for mobile */
+    .patient-2 .line {
+      width: 35vw;
+      max-width: 200px;
+    }
+    
+    .patient-3 .line {
+      width: 35vw;
+      max-width: 200px;
+    }
+    
+    .patient-4 .line {
+      width: 35vw;
+      max-width: 200px;
+    }
+    
+    .patient-5 .line {
+      width: 35vw;
+      max-width: 200px;
+    }
+    
+    .patient-6 .line {
+      width: 35vw;
+      max-width: 200px;
+    }
+    
+    /* Adjust patient positions for mobile */
+    .patient-1 {
+      top: 20%;
+      left: 10%;
+    }
+    
+    .patient-2 {
+      top: 20%;
+      left: 90%;
+    }
+    
+    .patient-3 {
+      top: 50%;
+      left: 10%;
+    }
+    
+    .patient-4 {
+      top: 50%;
+      left: 90%;
+    }
+    
+    .patient-5 {
+      top: 80%;
+      left: 10%;
+    }
+    
+    .patient-6 {
+      top: 80%;
+      left: 90%;
+    }
+    
+    /* Adjust particle animations for mobile to follow lines */
     @keyframes moveToCenter1 {
       0%, 100% { 
         transform: translate(0, 0); 
@@ -443,11 +509,11 @@
         opacity: 1;
       }
       80% {
-        transform: translate(180px, 120px); 
+        transform: translate(35vw, 18vw); 
         opacity: 1;
       }
       98% {
-        transform: translate(180px, 120px); 
+        transform: translate(35vw, 18vw); 
         opacity: 0;
       }
     }
@@ -461,11 +527,11 @@
         opacity: 1;
       }
       80% {
-        transform: translate(-180px, 120px); 
+        transform: translate(-35vw, 18vw); 
         opacity: 1;
       }
       98% {
-        transform: translate(-180px, 120px); 
+        transform: translate(-35vw, 18vw); 
         opacity: 0;
       }
     }
@@ -479,11 +545,11 @@
         opacity: 1;
       }
       80% {
-        transform: translate(180px, 0); 
+        transform: translate(35vw, 0); 
         opacity: 1;
       }
       98% {
-        transform: translate(180px, 0); 
+        transform: translate(35vw, 0); 
         opacity: 0;
       }
     }
@@ -497,11 +563,11 @@
         opacity: 1;
       }
       80% {
-        transform: translate(-180px, 0); 
+        transform: translate(-35vw, 0); 
         opacity: 1;
       }
       98% {
-        transform: translate(-180px, 0); 
+        transform: translate(-35vw, 0); 
         opacity: 0;
       }
     }
@@ -515,11 +581,11 @@
         opacity: 1;
       }
       80% {
-        transform: translate(180px, -120px); 
+        transform: translate(35vw, -18vw); 
         opacity: 1;
       }
       98% {
-        transform: translate(180px, -120px); 
+        transform: translate(35vw, -18vw); 
         opacity: 0;
       }
     }
@@ -533,11 +599,11 @@
         opacity: 1;
       }
       80% {
-        transform: translate(-180px, -120px); 
+        transform: translate(-35vw, -18vw); 
         opacity: 1;
       }
       98% {
-        transform: translate(-180px, -120px); 
+        transform: translate(-35vw, -18vw); 
         opacity: 0;
       }
     }
