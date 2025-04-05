@@ -1,0 +1,356 @@
+---
+---
+
+<section class="patient-data-flow">
+  <div class="animation-container">
+    <div class="medical-facility">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1e40af" width="40" height="40">
+        <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
+      </svg>
+      <div class="facility-label">Medical Facility</div>
+    </div>
+    
+    <div class="patient-1">
+      <div class="patient-icon"></div>
+      <div class="data-line">
+        <div class="moving-dot dot-1"></div>
+        <div class="moving-dot dot-2"></div>
+        <div class="moving-dot dot-3"></div>
+      </div>
+    </div>
+    
+    <div class="patient-2">
+      <div class="patient-icon"></div>
+      <div class="data-line">
+        <div class="moving-dot dot-1"></div>
+        <div class="moving-dot dot-2"></div>
+        <div class="moving-dot dot-3"></div>
+      </div>
+    </div>
+    
+    <div class="patient-3">
+      <div class="patient-icon"></div>
+      <div class="data-line">
+        <div class="moving-dot dot-1"></div>
+        <div class="moving-dot dot-2"></div>
+        <div class="moving-dot dot-3"></div>
+      </div>
+    </div>
+    
+    <div class="patient-4">
+      <div class="patient-icon"></div>
+      <div class="data-line">
+        <div class="moving-dot dot-1"></div>
+        <div class="moving-dot dot-2"></div>
+        <div class="moving-dot dot-3"></div>
+      </div>
+    </div>
+    
+    <div class="patient-5">
+      <div class="patient-icon"></div>
+      <div class="data-line">
+        <div class="moving-dot dot-1"></div>
+        <div class="moving-dot dot-2"></div>
+        <div class="moving-dot dot-3"></div>
+      </div>
+    </div>
+    
+    <div class="patient-6">
+      <div class="patient-icon"></div>
+      <div class="data-line">
+        <div class="moving-dot dot-1"></div>
+        <div class="moving-dot dot-2"></div>
+        <div class="moving-dot dot-3"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="animation-caption">
+    <h3>Connecting Patients to Care</h3>
+    <p>Patient data flows securely from rural areas to medical facilities, enabling better healthcare access and outcomes.</p>
+  </div>
+</section>
+
+<style>
+  .patient-data-flow {
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .animation-container {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Medical facility in center */
+  .medical-facility {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .facility-label {
+    position: absolute;
+    bottom: -25px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1e40af;
+    white-space: nowrap;
+  }
+  
+  /* Patient styles */
+  .patient-1, .patient-2, .patient-3, .patient-4, .patient-5, .patient-6 {
+    position: absolute;
+  }
+  
+  .patient-1 {
+    top: 20%;
+    left: 15%;
+  }
+  
+  .patient-2 {
+    top: 20%;
+    left: 85%;
+  }
+  
+  .patient-3 {
+    top: 50%;
+    left: 15%;
+  }
+  
+  .patient-4 {
+    top: 50%;
+    left: 85%;
+  }
+  
+  .patient-5 {
+    top: 80%;
+    left: 15%;
+  }
+  
+  .patient-6 {
+    top: 80%;
+    left: 85%;
+  }
+  
+  .patient-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #059669;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+  }
+  
+  .patient-icon::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  /* Data line connecting patient to facility */
+  .data-line {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    height: 3px;
+    background-color: rgba(59, 130, 246, 0.2);
+    transform-origin: left center;
+    z-index: 1;
+  }
+  
+  /* Patient 1 line */
+  .patient-1 .data-line {
+    width: 300px;
+    transform: rotate(24deg);
+  }
+  
+  /* Patient 2 line */
+  .patient-2 .data-line {
+    width: 300px;
+    transform: rotate(156deg);
+  }
+  
+  /* Patient 3 line */
+  .patient-3 .data-line {
+    width: 300px;
+    transform: rotate(0deg);
+  }
+  
+  /* Patient 4 line */
+  .patient-4 .data-line {
+    width: 300px;
+    transform: rotate(-180deg);
+  }
+  
+  /* Patient 5 line */
+  .patient-5 .data-line {
+    width: 300px;
+    transform: rotate(-24deg);
+  }
+  
+  /* Patient 6 line */
+  .patient-6 .data-line {
+    width: 300px;
+    transform: rotate(-156deg);
+  }
+  
+  /* Moving dots on data lines */
+  .moving-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+    top: -4px;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+    transform: translateX(-5px);
+  }
+  
+  /* Dot animations */
+  .patient-1 .dot-1 { animation: moveRight1 6s infinite; animation-delay: 1s; }
+  .patient-1 .dot-2 { animation: moveRight1 6s infinite; animation-delay: 3s; }
+  .patient-1 .dot-3 { animation: moveRight1 6s infinite; animation-delay: 5s; }
+  
+  .patient-2 .dot-1 { animation: moveRight2 6s infinite; animation-delay: 2s; }
+  .patient-2 .dot-2 { animation: moveRight2 6s infinite; animation-delay: 4s; }
+  .patient-2 .dot-3 { animation: moveRight2 6s infinite; animation-delay: 6s; }
+  
+  .patient-3 .dot-1 { animation: moveRight3 8s infinite; animation-delay: 1.5s; }
+  .patient-3 .dot-2 { animation: moveRight3 8s infinite; animation-delay: 4.5s; }
+  .patient-3 .dot-3 { animation: moveRight3 8s infinite; animation-delay: 7.5s; }
+  
+  .patient-4 .dot-1 { animation: moveRight4 7s infinite; animation-delay: 0.5s; }
+  .patient-4 .dot-2 { animation: moveRight4 7s infinite; animation-delay: 3s; }
+  .patient-4 .dot-3 { animation: moveRight4 7s infinite; animation-delay: 5.5s; }
+  
+  .patient-5 .dot-1 { animation: moveRight5 7.5s infinite; animation-delay: 1.2s; }
+  .patient-5 .dot-2 { animation: moveRight5 7.5s infinite; animation-delay: 3.7s; }
+  .patient-5 .dot-3 { animation: moveRight5 7.5s infinite; animation-delay: 6.2s; }
+  
+  .patient-6 .dot-1 { animation: moveRight6 6.5s infinite; animation-delay: 0.7s; }
+  .patient-6 .dot-2 { animation: moveRight6 6.5s infinite; animation-delay: 2.9s; }
+  .patient-6 .dot-3 { animation: moveRight6 6.5s infinite; animation-delay: 5.1s; }
+  
+  /* Individual animations for each patient */
+  @keyframes moveRight1 {
+    0% { left: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  
+  @keyframes moveRight2 {
+    0% { left: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  
+  @keyframes moveRight3 {
+    0% { left: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  
+  @keyframes moveRight4 {
+    0% { left: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  
+  @keyframes moveRight5 {
+    0% { left: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  
+  @keyframes moveRight6 {
+    0% { left: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  
+  /* Pulse animation for patients */
+  .patient-1 .patient-icon { animation: pulse 6s infinite; animation-delay: 1s; }
+  .patient-2 .patient-icon { animation: pulse 6s infinite; animation-delay: 2s; }
+  .patient-3 .patient-icon { animation: pulse 8s infinite; animation-delay: 1.5s; }
+  .patient-4 .patient-icon { animation: pulse 7s infinite; animation-delay: 0.5s; }
+  .patient-5 .patient-icon { animation: pulse 7.5s infinite; animation-delay: 1.2s; }
+  .patient-6 .patient-icon { animation: pulse 6.5s infinite; animation-delay: 0.7s; }
+  
+  @keyframes pulse {
+    0%, 30%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
+    }
+    5% {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 10px rgba(5, 150, 105, 0.4);
+    }
+    10% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
+    }
+  }
+  
+  .animation-caption {
+    text-align: center;
+    max-width: 600px;
+  }
+  
+  .animation-caption h3 {
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+  }
+  
+  .animation-caption p {
+    color: var(--text-light);
+    margin: 0;
+  }
+  
+  /* Mobile layout */
+  @media (max-width: 768px) {
+    .animation-container {
+      height: 400px;
+    }
+    
+    .patient-1 .data-line,
+    .patient-2 .data-line,
+    .patient-3 .data-line,
+    .patient-4 .data-line,
+    .patient-5 .data-line,
+    .patient-6 .data-line {
+      width: 200px;
+    }
+  }
+</style>
